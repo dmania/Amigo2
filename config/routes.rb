@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+  get 'friends/new'
+
+  get 'friends/index'
+
+  get 'friends/create'
+
   # get 'users/index'
   
   root 'users#login'
+
+  resources :users
+  resources :friends
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

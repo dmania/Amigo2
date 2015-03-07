@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302002417) do
+ActiveRecord::Schema.define(version: 20150307153625) do
+
+  create_table "friends", force: :cascade do |t|
+    t.string   "friend_name"
+    t.string   "friend_birthday"
+    t.string   "friend_phone"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +36,9 @@ ActiveRecord::Schema.define(version: 20150302002417) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "user_name"
+    t.date     "user_birthday"
+    t.string   "user_phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

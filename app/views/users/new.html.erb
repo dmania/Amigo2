@@ -1,0 +1,23 @@
+<h1> Welcome to N'Oubliez Pas!</h1>
+
+<p>Let's get started - tell us a little about yourself so we can set up your profile: </p>
+
+<%= form_for @user do |f| %>
+	<fieldset>
+<h3>Your Profile</h3>
+		<div class= 'fields'>
+			Name: <f.label :name %>
+			<%= f.text_field :user_name, placeholder: "Name" %> 
+		
+		<div class= 'fields'>
+			Phone Number: <f.label :phone %>
+			<%= f.text_field :user_phone, placeholder: "+12345678" %> 
+		
+		<div class= 'fields'>
+			Birthday: <f.label :birthday %>
+			<%= f.date_field :user_birthday %> 
+
+	</br><%= f.submit "Submit" %>
+	<% end %>
+
+	</fieldset>	

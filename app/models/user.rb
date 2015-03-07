@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   #        :recoverable, :rememberable, :trackable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
+  validates_uniqueness_of :number
 
 
 def self.from_omniauth(auth)
