@@ -9,7 +9,6 @@ class FriendsController < ApplicationController
 
   def create
     @friend = params[:friend]
-    binding.pry
     name = @friend[:friend_name]
     dob = @friend[:friend_birthday]
     phone = @friend[:friend_phone]
