@@ -1,0 +1,19 @@
+<%= form_for @friend do |f| %>
+	<fieldset>
+<h3>Friend or Family Member</h3>
+		<div class= 'fields'>
+			Name: <f.label :name %>
+			<%= f.text_field :friend_name, placeholder: "Name" %> 
+		
+		<div class= 'fields'>
+			Their Phone Number: <f.label :phone %>
+			<%= f.text_field :friend_phone, placeholder: "+12345678" %> 
+		
+		<div class= 'fields'>
+			Their Birthday: <f.label :birthday %>
+			<%= f.date_field :friend_birthday %> 
+
+	</br><%= f.submit "N'oubliez Pas" %>
+	<% end %>
+
+	</fieldset>	

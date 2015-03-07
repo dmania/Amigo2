@@ -50,7 +50,9 @@ group :development, :test do
   gem 'spring'
 
   gem 'sqlite3'
-  
+
+  gem 'pry-rails'
+
 end
 
 ruby '2.1.5'
