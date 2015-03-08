@@ -9,12 +9,13 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = params[:friend]
-    name = @friend[:friend_name]
-    dob = @friend[:friend_birthday]
-    phone = @friend[:friend_phone]
-  	@friend = Friend.new(friend_name: name, friend_birthday: dob, friend_phone: phone)
-  	if @friend.save
+    # @friend = params[:friend]
+    # name = @friend[:friend_name]
+    # dob = @friend[:friend_birthday]
+    # phone = @friend[:friend_phone]
+  	# @friend = Friend.new(friend_name: name, friend_birthday: dob, friend_phone: phone)
+  	@friend = Friend.new(:friend_name, :friend_birthday, :friend_phone)
+    if @friend.save
   		redirect_to @friend
   	else
   		render 'new'
@@ -43,25 +44,12 @@ class FriendsController < ApplicationController
     @friend.save
 
     redirect_to @friend
-
-
-
-
-
-   #friend.update friends_params
   end
-  	# friend = Friend.find(params[:id])
-   #friend.update params[:id]
-  	# redirect_to friend
-
 
   def destroy
     Friend.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to friends_path
   end
-
-
-
 
 end
