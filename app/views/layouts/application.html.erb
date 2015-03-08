@@ -53,11 +53,6 @@
 <%= yield %>
 
 
-<div align= "right" > <%= current_user.email if user_signed_in? %> | 
-<%= link_to "Logout", destroy_user_session_path %> </div>
-
-
-
 <!-- <div align = "left"> 
 	<%= link_to 'Home', root_path %> | 
 	<%= link_to 'See My Friends and Family', friends_path %> | 

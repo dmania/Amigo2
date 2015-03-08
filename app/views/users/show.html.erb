@@ -7,6 +7,6 @@
 <p>Birthday: <%= current_user.user_birthday %> </p>
 <p>Phone Number: <%= current_user.user_phone %></p>
 
+<button type = "button" class="btn btn-md btn-success" href="/users/:id/edit"> Edit Profile </button>
+
 <p>If not, <%= link_to 'edit your profile here', edit_user_path %></p>
-
-

@@ -34,13 +34,13 @@ class FriendsController < ApplicationController
   def update
     friend = params[:friend][:friend_name]
     phone = params[:friend][:friend_phone]
-    dob = Date.parse(params[:friend][:friend_birthday])
+    #dob = Date.parse(params[:friend][:friend_birthday])
 
     @friend = Friend.find(params[:id])
 
     @friend.friend_name = friend
     @friend.friend_phone = phone
-    @friend.friend_birthday = dob
+    #@friend.friend_birthday = dob
     @friend.save
 
     redirect_to @friend
