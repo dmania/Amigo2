@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
 
   def index
+    @friend = Friend.all
   end
 
   def new
@@ -25,6 +26,12 @@ class FriendsController < ApplicationController
   end
 
   def edit
+    
+    #@friend = Friend.all
+    #@friend = Friend.find(:id)
+    #@friend = params[:friend]
+    @friend = Friend.find(params[:id])
+
   end
 
   def update

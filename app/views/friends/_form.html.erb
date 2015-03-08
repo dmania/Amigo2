@@ -1,6 +1,8 @@
-<%= form_for @friend do |f| %>
-	<fieldset>
 <h3>Friend or Family Member</h3>
+
+
+<fieldset>
+		<%= form_for @friend do |f| %>
 		<div class= 'fields'>
 			Name: <f.label :name %>
 			<%= f.text_field :friend_name, placeholder: "Name" %> 

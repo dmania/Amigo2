@@ -1,10 +1,14 @@
-<h2>Hello, <%= current_user.email %></h2>
+<h1>Hello <%= current_user.user_name %></h1>
 
-<div align= "right" > <%= current_user.email if user_signed_in? %> 
+<h2> Your Profile </h2>
+<h3> Is this information up-to-date? </h3>
 
 <p>Name: <%= current_user.user_name %></p>
 <p>Birthday: <%= current_user.user_birthday %> </p>
 <p>Phone Number: <%= current_user.user_phone %></p>
 
+<p>If not, <%= link_to 'edit your profile here', edit_user_path %></p>
 
-<p><%= link_to 'Edit my profile', edit_user_path %></p>
+
+<%= link_to 'See My Friends and Family', friends_path %>
+<%= link_to 'Add a Friend', new_friend_path %>
