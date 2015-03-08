@@ -6,8 +6,10 @@
 		<th>Name</th>
 		<th>Date of Birth</th>
 		<th>Phone Number</th>
+	<% if user_signed_in? %>
 		<th>Edit Friend</th>
 		<th>Delete Friend</th>
+	<% end %>
 	</tr>
 	</thead>
 
@@ -17,7 +19,12 @@
 		<td><%= friend.friend_name %></td>
 		<td><%= friend.friend_birthday %></td>
 		<td><%= friend.friend_phone %></td>
+	<% if user_signed_in? %>
 		<td><%= link_to "Edit", edit_friend_path(friend)%></td>
+		<td><%= link_to "Delete", friend_path(friend), :method => :delete, :confirm => 'Are you sure?' %>
+	<% end %> 
+
+		<td>
 	</tr>
 <% end %>
 </tbody>

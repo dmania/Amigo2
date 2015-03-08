@@ -26,18 +26,41 @@ class FriendsController < ApplicationController
   end
 
   def edit
-    
-    #@friend = Friend.all
-    #@friend = Friend.find(:id)
-    #@friend = params[:friend]
     @friend = Friend.find(params[:id])
 
   end
 
   def update
-  	@friend.update friend_params
-  	redirect_to @friend
+    friend = params[:friend][:friend_name]
+    phone = params[:friend][:friend_phone]
+    dob = Date.parse(params[:friend][:friend_birthday])
+
+    @friend = Friend.find(params[:id])
+
+    @friend.friend_name = friend
+    @friend.friend_phone = phone
+    @friend.friend_birthday = dob
+    @friend.save
+
+    redirect_to @friend
+
+
+
+
+
+   #friend.update friends_params
   end
+  	# friend = Friend.find(params[:id])
+   #friend.update params[:id]
+  	# redirect_to friend
+
+
+  def destroy
+    Friend.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to friends_path
+  end
+
 
 
 
