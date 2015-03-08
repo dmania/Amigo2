@@ -1,5 +1,10 @@
-<%= render '/shared/nav' %>
+<h2>Hello, <%= current_user.email %></h2>
 
-<h1> User Name Saved </h1
+<div align= "right" > <%= current_user.email if user_signed_in? %> 
 
-	
+<p>Name: <%= current_user.user_name %></p>
+<p>Birthday: <%= current_user.user_birthday %> </p>
+<p>Phone Number: <%= current_user.user_phone %></p>
+
+
+<p><%= link_to 'Edit my profile', edit_user_path %></p>
