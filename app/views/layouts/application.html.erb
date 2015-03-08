@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Amigo2</title>
+  <title>N'Oubliez Pas</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<!-- 
+ <div class="masthead"> 
+<% if user_signed_in? %>
+        <ul class="nav nav-pills pull-right"> 
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/friends/new">Add a Friend</a></li>
+          <li><a href="#">See friends</a></li>
+        </ul>
+        <h3 class="muted"><%= current_user.email if user_signed_in? %></h3>
+      </div>
+      <% end %>
+
+      <hr> -->
+
+<% if user_signed_in? %>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/users/show">Your Profile</a></li>
+        <li><a href="/friends">Friends and Family</a></li>
+        <li><a href="/friends/new">Add Someone</a></li>
+        <li><a href="/sign_out">Log-Out</a></li>
+        
+      </ul>
+  </div>
+</div>
+<% end %>
+
+<hr>
+
 <body>
-
-	<%= render "/shared/nav" %>
-
 
 <%= yield %>
 
-<div align = "left"> 
+
+<div align= "right" > <%= current_user.email if user_signed_in? %> | 
+<%= link_to "Logout", destroy_user_session_path %> </div>
+
+
+
+<!-- <div align = "left"> 
 	<%= link_to 'Home', root_path %> | 
 	<%= link_to 'See My Friends and Family', friends_path %> | 
 	<%= link_to 'Add a Friend', new_friend_path %>
-</div>
+</div> -->
+
 </body>
 </html>
+ 
+
+ 
