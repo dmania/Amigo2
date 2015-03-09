@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :friends
+  
   attr_accessible :password
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
