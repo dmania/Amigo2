@@ -1,16 +1,8 @@
-</br>
-</br>
 
-<!-- 	<% if !user_signed_in? %>
-		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>  -->
-	<% else %>
-		<%= link_to "Go to my profile", user_path(@user) %>
-
-<div align= "right" > <%= current_user.email if user_signed_in? %> 
-	<% end %>
-
+<div class = "container">
 	<div class="jumbotron">
         <h1>N'Oubliez Pas</h1>
         <p class="lead">Helping you maintain your friendships since late on Sunday night when this app was completed.</p>
         <a class="btn btn-large btn-success" href="/users/auth/facebook">Log-In With Facebook </a>
       </div>
+</div>

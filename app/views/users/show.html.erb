@@ -1,12 +1,31 @@
-<h1>Hello <%= current_user.user_name %></h1>
+<div class = "container">
+<h2>Hello <%= current_user.user_name %></h2>
+<h3> Your Profile </h3>
 
-<h2> Your Profile </h2>
-<h3> Is this information up-to-date? </h3>
-
-<p>Name: <%= current_user.user_name %></p>
+<!-- <p>Name: <%= current_user.user_name %></p>
 <p>Birthday: <%= current_user.user_birthday %> </p>
 <p>Phone Number: <%= current_user.user_phone %></p>
+ -->
+<p>Did you change your phone number or go back in time and change your date of birthday? Let us know: </p>
+<a class="btn btn-medium btn-success" href="/users/:id/edit">Edit Profile</a>
 
-<button type = "button" class="btn btn-md btn-success" href="/users/:id/edit"> Edit Profile </button>
 
-<p>If not, <%= link_to 'edit your profile here', edit_user_path %></p>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Date of Birth</th>
+		<th>Phone Number</th>
+
+<tbody>
+	<tr>
+		<td><%= current_user.user_name %></td>
+		<td><%= current_user.user_birthday %></td>
+		<td><%= current_user.user_phone %></td>
+	</tr>
+</tbody>
+
+</table>
+
+</div>
