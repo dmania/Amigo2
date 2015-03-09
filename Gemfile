@@ -27,6 +27,7 @@ gem 'devise'
 gem 'twilio-ruby'
 gem 'protected_attributes'
 gem 'bootstrap-sass', '~> 3.3.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

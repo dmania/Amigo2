@@ -1,28 +1,25 @@
 <div class = "container">
-<h1> Welcome to N'Oubliez Pas!</h1>
 
-<p>Let's get started - tell us a little about yourself so we can set up your profile: </p>
-
-<%= form_for @user do |f| %>
+<h1>Your Profile</h1>
+<p>Please update your information in the table below and click submit. </p>
 	<fieldset>
-<h3>Your Profile</h3>
-		<div class= 'fields'>
-			Name: <f.label :name %>
-			<%= f.text_field :user_name, placeholder: "Name" %> 
-		
-		<div class= 'fields'>
-			Phone Number: <f.label :phone %>
-			<%= f.text_field :user_phone, placeholder: "+12345678" %> 
-		
-		<div class= 'fields'>
-			Birthday: <f.label :birthday %>
-			<%= f.date_field :user_birthday %> 
+		<table class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Date of Birth</th>
+				<th>Phone Number</th>
 
-	</br><%= f.submit "Submit" %>
-
-<a class="btn btn-medium btn-success" href="/users/:id/edit">Edit Profile</a>
-
-	</fieldset>	
-	<% end %>
-
+		<tbody>
+			<%= form_for @user do |f| %>
+			<tr>
+				<td><f.label :name %>
+					<%= f.text_field :user_name, placeholder: "Name" %> </td>
+				<td><f.label :birthday %>
+					<%= f.date_field :user_birthday %> </td>
+				<td><f.label :phone %>
+					<%= f.text_field :user_phone, placeholder: "+12345678" %></td>
+				<%= f.submit "Submit" %>
+					<% end %>
+			</tr>
+		</tbody>
 </div>

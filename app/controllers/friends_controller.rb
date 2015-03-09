@@ -5,7 +5,7 @@ class FriendsController < ApplicationController
   end
 
   def new
-  	@friend = Friend.new
+    @friend = Friend.new
   end
 
   def create
@@ -13,17 +13,17 @@ class FriendsController < ApplicationController
     # name = @friend[:friend_name]
     # dob = @friend[:friend_birthday]
     # phone = @friend[:friend_phone]
-  	# @friend = Friend.new(friend_name: name, friend_birthday: dob, friend_phone: phone)
-  	@friend = Friend.new(:friend_name, :friend_birthday, :friend_phone)
+    # @friend = Friend.new(friend_name: name, friend_birthday: dob, friend_phone: phone)
+    @friend = Friend.new(:friend_name, :friend_birthday, :friend_phone)
     if @friend.save
-  		redirect_to @friend
-  	else
-  		render 'new'
-  	end
+      redirect_to @friend
+    else
+      render 'new'
+    end
   end
 
   def show
-  	@friend = Friend.find(params[:id])
+    @friend = Friend.find(params[:id])
   end
 
   def edit
